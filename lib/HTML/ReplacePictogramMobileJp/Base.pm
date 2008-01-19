@@ -2,10 +2,11 @@ package HTML::ReplacePictogramMobileJp::Base;
 use strict;
 use warnings;
 use base 'Exporter';
-our @EXPORT = qw/validate_args unicode_property unicode_hex_cref filter/;
+our @EXPORT = qw/validate_args unicode_property unicode_hex_cref filter img_localsrc/;
 use Params::Validate ':all';
 use Encode;
 use Encode::JP::Mobile ':props';
+use File::ShareDir 'dist_file';
 
 sub validate_args {
     validate(
@@ -31,6 +32,26 @@ sub unicode_property {
 sub unicode_hex_cref {
     my $carrier = shift;
     $_ =~ s/&#x([A-F0-9]{4});/callback(hex $1, $carrier)/ge;
+}
+
+sub _kddi_number2unicode_auto {
+    my $number = shift;
+
+    my $fname =
+      File::ShareDir::dist_file( 'Encode-JP-Mobile', 'kddi-table.pl' );
+    my $dat = do $fname;
+    for my $row (@$dat) {
+        if ( $row->{number} == $number ) {
+            return hex $row->{unicode_auto};
+        }
+    }
+    return;    # invalid number
+}
+
+sub img_localsrc {
+    $_ =~ s{<img[^<>]+localsrc=["'](\d+)[^<>]+>}{
+        callback(_kddi_number2unicode_auto($1), 'E');
+    }ge;
 }
 
 sub filter {

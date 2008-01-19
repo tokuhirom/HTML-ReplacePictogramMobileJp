@@ -23,6 +23,8 @@ filter sjis => 'x-sjis-kddi-auto', sub {
         }
     /ge;
 
+    img_localsrc 'E';
+
     unicode_property 'E';
 };
 
