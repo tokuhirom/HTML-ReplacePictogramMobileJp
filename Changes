@@ -1,5 +1,10 @@
 Revision history for Perl extension HTML::ReplacePictogramMobileJp
 
+0.03
+
+    - au phone can display <img localsrc="1" />
+    - oops. added PREREQS.
+
 0.02
 
     - au phone can display docomo sjis hex cref
