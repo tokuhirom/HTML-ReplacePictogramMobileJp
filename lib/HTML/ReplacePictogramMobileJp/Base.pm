@@ -2,22 +2,11 @@ package HTML::ReplacePictogramMobileJp::Base;
 use strict;
 use warnings;
 use base 'Exporter';
-our @EXPORT = qw/validate_args unicode_property unicode_hex_cref filter img_localsrc/;
+our @EXPORT = qw/unicode_property unicode_hex_cref filter img_localsrc/;
 use Params::Validate ':all';
 use Encode;
 use Encode::JP::Mobile ':props';
 use File::ShareDir 'dist_file';
-
-sub validate_args {
-    validate(
-        @_,
-        +{
-            callback => { type => CODEREF },
-            html     => { type => SCALAR },
-        }
-    );
-    @_;
-}
 
 my $property_for = +{
     E => 'InKDDIPictograms',
@@ -60,7 +49,15 @@ sub filter {
     no strict 'refs';
     *{"$pkg\::$charset"} = sub {
         my $class = shift;
-        my %args = validate_args(@_);
+        validate(
+            @_,
+            +{
+                callback => { type => CODEREF },
+                html     => { type => SCALAR },
+            }
+        );
+        my %args = @_;
+
         local $_ = decode($decode_by, $args{html}, Encode::FB_XMLCREF);
         local *HTML::ReplacePictogramMobileJp::Base::callback = $args{callback};
         local *{"$pkg\::callback"} = $args{callback};
