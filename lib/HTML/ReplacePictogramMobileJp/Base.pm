@@ -45,6 +45,8 @@ sub filter {
 
         $code->();
 
+        $_ = encode($decode_by, $_);
+
         $_;
     };
 }
