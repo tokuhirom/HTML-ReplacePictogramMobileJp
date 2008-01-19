@@ -42,6 +42,7 @@ sub filter {
         my %args = validate_args(@_);
         local $_ = decode($decode_by, $args{html}, Encode::FB_XMLCREF);
         local *HTML::ReplacePictogramMobileJp::Base::callback = $args{callback};
+        local *{"$pkg\::callback"} = $args{callback};
 
         $code->();
 
