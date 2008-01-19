@@ -1,4 +1,11 @@
 Revision history for Perl extension HTML::ReplacePictogramMobileJp
 
+0.02
+
+    - au phone can display docomo sjis hex cref
+    - au phone can display kddi unicode hex cref
+    - softbank phone can display unicode hex cref
+    - oops. return value is bytes instead of unicode string.
+
 0.01    Fri Jan 18 20:39:18 2008
         - original version
