@@ -10,6 +10,7 @@ is _x('I', 'sjis', encode('x-sjis-docomo', "\x{E757}")), "<U+E757> I";
 is _x('I', 'sjis', "&#xE757;"), "<U+E757> I";
 
 is _x('E', 'utf8', encode('x-utf8-ezweb', "\x{ED80}")), "<U+ED80> E";
+is _x('E', 'utf8', "&#xED80;"), "<U+ED80> E";
 # is _x('E', 'sjis', encode('x-sjis-docomo', "\x{E757}")), "<U+E757> I", 'docomo => kddi';
 is _x('E', 'sjis', encode('x-sjis-kddi-auto', "\x{ED8D}")), "<U+ED8D> E", 'kddi-auto';
 
