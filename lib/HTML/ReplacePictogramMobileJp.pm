@@ -38,6 +38,8 @@ __END__
 
 =encoding utf8
 
+=for stopwords au
+
 =head1 NAME
 
 HTML::ReplacePictogramMobileJp - HTML に含まれる絵文字を置換する
