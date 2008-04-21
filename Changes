@@ -1,5 +1,9 @@
 Revision history for Perl extension HTML::ReplacePictogramMobileJp
 
+0.04
+
+    - added docomo sjis dec cref support.
+
 0.03
 
     - au phone can display <img localsrc="1" />
