@@ -1,5 +1,10 @@
 Revision history for Perl extension HTML::ReplacePictogramMobileJp
 
+0.05
+
+    - ezweb can display <img localsrc="1" /> in utf8.
+      (reported by yappo++)
+
 0.04
 
     - added docomo sjis dec cref support.

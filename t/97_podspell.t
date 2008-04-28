@@ -13,3 +13,5 @@ GMAIL
 COM
 Tatsuhiko
 Miyagawa
+Kazuhiro
+Osawa
