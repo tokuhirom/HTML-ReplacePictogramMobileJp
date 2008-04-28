@@ -1,6 +1,6 @@
 use strict;
 use warnings;
-use Test::More tests => 17;
+use Test::More tests => 18;
 use HTML::ReplacePictogramMobileJp;
 use Encode;
 use Encode::JP::Mobile;
@@ -15,6 +15,7 @@ is _x('E', 'utf8', "&#xED80;"), "<U+ED80> E", 'kddi-utf8: kddi unicode hex cref'
 is _x('E', 'sjis', "&#xF987;"), "<U+EFFB> E", 'kddi-sjis: docomo unicode hex cref';
 is _x('E', 'sjis', "&#xED80;"), "<U+ED80> E", 'kddi-sjis: kddi unicode hex cref';
 is _x('E', 'sjis', q{<img localsrc="1" />}), "<U+EF59> E", '<img localsrc=".." />';
+is _x('E', 'utf8', q{<img localsrc="1" />}), "<U+EF59> E", '<img localsrc=".." />';
 # is _x('E', 'sjis', encode('x-sjis-docomo', "\x{E757}")), "<U+E757> I", 'docomo => kddi';
 is _x('E', 'sjis', encode('x-sjis-kddi-auto', "\x{ED8D}")), "<U+ED8D> E", 'kddi-auto';
 

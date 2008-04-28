@@ -67,6 +67,10 @@ HTML::ReplacePictogramMobileJp は HTML に含まれる絵文字を置換する�
 
 Tokuhiro Matsuno E<lt>tokuhirom@gmail.comE<gt>
 
+=head1 THANKS TO
+
+Kazuhiro Osawa
+
 =head1 SEE ALSO
 
 L<Encode::JP::Mobile>, L<Moxy>
