@@ -8,6 +8,7 @@ use Encode::JP::Mobile ':props';
 filter utf8 => 'x-utf8-kddi', sub {
     unicode_property 'E';
     unicode_hex_cref 'E';
+    img_localsrc 'E';
 };
 
 # とりあえず KDDI-Auto をつかう.どっちにするべき?
