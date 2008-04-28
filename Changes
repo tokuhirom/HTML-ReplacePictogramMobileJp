@@ -1,5 +1,9 @@
 Revision history for Perl extension HTML::ReplacePictogramMobileJp
 
+0.06
+
+    - willcom phone can display sjis hex cref.
+
 0.05
 
     - ezweb can display <img localsrc="1" /> in utf8.
