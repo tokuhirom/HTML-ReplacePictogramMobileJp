@@ -24,8 +24,8 @@ is _x('V', 'sjis', "&#xE001;"), "<U+E001> V", 'softbank-unicode-hex-cref-sjis';
 is _x('V', 'utf8', encode('x-utf8-softbank', "\x{E537}")), "<U+E537> V", 'softbank-utf8';
 is _x('V', 'utf8', "&#xE537;"), "<U+E537> V", 'softbank-utf8-hex-cref';
 
-is _x('H', 'utf8', "&#xE757;"), "<U+E757> I", 'airh sjis hex cref';
-is _x('H', 'sjis', "&#xE757;"), "<U+E757> I", 'airh sjis hex cref';
+is _x('H', 'utf8', "&#xE757;"), "<U+E757> I", 'airh utf8 hex cref';
+is _x('H', 'sjis', "&#xF8A0;"), "<U+E63F> I", 'airh sjis hex cref';
 is _x('H', 'sjis', "\xf9\xfc"), "<U+E757> I", 'airh sjis binary';
 
 sub _x {
