@@ -1,5 +1,9 @@
 Revision history for Perl extension HTML::ReplacePictogramMobileJp
 
+0.07
+
+    - modernized package
+
 0.06
 
     - willcom phone can display sjis hex cref.
